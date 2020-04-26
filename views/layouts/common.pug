@@ -7,14 +7,15 @@ html(lang="en")
       title Hưng đẹp trai
    body
       nav.navbar.navbar-expand-lg.navbar-light.bg-light
-         a.navbar-brand(href='#')= name
+         a.navbar-brand(href='/') Hung-sama
          #navbarSupportedContent.collapse.navbar-collapse
             ul.navbar-nav.mr-auto
                li.nav-item.active
-                  a.nav-link(href='#') Home
-               li.nav-item
-                  a.nav-link(href='#') Link
-      block content
-      br
-      br
-      p.text-center &copy; Hưng đẹp trai
+                  a.nav-link(href='/authors') Authors
+               li.nav-item.active
+                  a.nav-link(href='/authors/new') Add author
+      .container
+         block content
+         br
+         br
+         p.text-center &copy; Hưng đẹp trai

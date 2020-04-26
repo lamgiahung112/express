@@ -1,0 +1,13 @@
+extends ../layouts/common
+
+block content
+   h2 New author
+
+   if error
+      .alert.alert-danger= error
+   form(action="/authors" method="POST")
+      .form-group
+         label(for="name")
+         input(type="text" name="name" value= author.name) 
+      a.btn.btn-secondary(href="/authors") Cancel
+      button.btn.btn-success(type="submit") Create
