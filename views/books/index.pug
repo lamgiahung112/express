@@ -4,19 +4,19 @@ block content
    h1 all books
    
    form(action="/books" method="GET")
-      .form-group
+      div
          label Title
-         input.form-control(type="text", name="title" value= searchOptions.title || '')
-      .form-group
+         input(type="text", name="title" value= searchOptions.title || '')
+      div
          label Published after
          input(type="date", name="publishedAfter" value= searchOptions.publishedAfter || '')
-      .form-group
+      div
          label Published before
          input(type="date", name="publishedBefore" value= searchOptions.publishedBefore || '')
-      button.btn.btn-primary(type="submit") Search
+      button(type="submit") Search
 
    br
    br
    each book in books
-      img(src= book.coverImagePath height="150" width="100")
+      img(src= book.coverImagePath)
 

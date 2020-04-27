@@ -4,28 +4,28 @@ block content
    h2 New book
 
    if error
-      .alert.alert-danger= error
-   form(action="/books" method="POST" enctype="multipart/form-data")
-      .form-group
+      div= error
+   form(action="/books" method="POST")
+      div
          label Title
-         input.form-control(type="text" name="title" value= book.title)
-      .form-group
+         input(type="text" name="title" value= book.title)
+      div
          label Author
-         select.form-control(name="author")
+         select(name="author")
             option(selected disabled) Choose author
             each author in authors
                   option(value= author._id)= author.name
-      .form-group
+      div
          label Publish Date
-         input.form-control(type="date" name="publishDate" 
+         input(type="date" name="publishDate" 
                               value= book.publishDate ? new Date(book.publishDate).toISOString().split('T')[0] : '')
-      .form-group
+      div
          label Page Count
-         input.form-control(type="number" name="pageCount" value= book.pageCount min="1")
-      .form-group
+         input(type="number" name="pageCount" value= book.pageCount min="1")
+      div
          label Description
-         textarea.form-control(name="description", rows="10")= book.description
-      .form-group
-         input(type="file" name="cover")
-      a.btn.btn-secondary(href="/books") Cancel
-      button.btn.btn-success(type="submit") Create
+         textarea(name="description", rows="10")= book.description
+      div
+         input.filepond(type="file" name="cover")
+      a(href="/books") Cancel
+      button(type="submit") Create

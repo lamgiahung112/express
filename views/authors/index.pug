@@ -4,10 +4,10 @@ block content
    h1 all authors
    
    form(action="/authors" method="GET")
-      .form-group
+      div
          label(for="name") Name
-         input.form-control(type="text", name="name" value= searchOptions.name || '')
-      button.btn.btn-primary(type="submit") Search
+         input(type="text", name="name" value= searchOptions.name || '')
+      button(type="submit") Search
 
    br
    each author in authors

@@ -4,10 +4,10 @@ block content
    h2 New author
 
    if error
-      .alert.alert-danger= error
+      div= error
    form(action="/authors" method="POST")
-      .form-group
+      div
          label(for="name") Name
-         input.form-control(type="text" name="name" value= author.name placeholder="Name") 
-      a.btn.btn-secondary(href="/authors") Cancel
-      button.btn.btn-success(type="submit") Create
+         input(type="text" name="name" value= author.name placeholder="Name") 
+      a(href="/authors") Cancel
+      button(type="submit") Create
