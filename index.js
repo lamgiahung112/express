@@ -3,6 +3,8 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
+debugger
+
 //Requiring middlewares
 const bodyParser = require('body-parser')
 
@@ -21,6 +23,7 @@ db.once('open', () => console.log('connected to mongodb'))
 //Routes
 const indexRoute = require('./routes/index')
 const authorRoute = require('./routes/authors')
+const bookRoute = require('./routes/books')
 
 //setting view
 app.set('view engine', 'pug')
@@ -30,6 +33,7 @@ app.use(express.static('public'))
 
 app.use('/', indexRoute)
 app.use('/authors', authorRoute)
+app.use('/books', bookRoute)
 
 app.listen(process.env.PORT || 9080, () => {
    console.log('listening port' + process.env.PORT)
