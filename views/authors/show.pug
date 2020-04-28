@@ -1,10 +1,11 @@
 extends ../layouts/common
 
 block content
-   h2= author.name
-   a(href=`/authors/${author._id}/edit`) Edit
-   form(method="POST" action="/authors/" + author._id + "?_method=DELETE")
-      button(type="submit") Delete
+   h2.page-header= author.name
+   .btn-row
+      a.btn.btn-primary(href=`/authors/${author._id}/edit`) Edit
+      form(method="POST" action="/authors/" + author._id + "?_method=DELETE")
+         button.btn.btn-danger(type="submit") Delete
    if booksByAuthor.length > 0
       h2 Book by Author 
       each book in booksByAuthor

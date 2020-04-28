@@ -3,6 +3,7 @@ html(lang="en")
    head
       meta(charset="UTF-8")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      link(rel="stylesheet", href="/stylesheets/main.css")
       link(defer href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet")
       script(defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js")
       link(defer href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet")
@@ -12,8 +13,9 @@ html(lang="en")
       script(defer src="/javascripts/fileUploads.js")
       title Hưng đẹp trai
    body
-      nav
-         a(href='/') Hung-sama
+      .container
+         nav.header-nav
+            a.header-title(href='/') Hung-sama
             ul
                li
                   a(href='/authors') Authors
@@ -23,8 +25,8 @@ html(lang="en")
                   a(href='/books') Books
                li
                   a(href='/books/new') Add books
-      div
-         block content
-         br
-         br
-         p &copy; Hưng đẹp trai
+         .inner-container
+            block content
+            br
+            br
+            p &copy; Handsome trikohung

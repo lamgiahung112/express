@@ -1,7 +1,7 @@
 extends ../layouts/common
 
 block content
-   h2= book.title
+   h2.page-header= book.title
    if err 
       div= err
    img(src= book.coverImagePath widht="100" height="150")
@@ -10,7 +10,8 @@ block content
    div= `Page Count: ${book.pageCount}`
    div= `Description: ${book.description}`
 
-   a(href=`/books/${book._id}/edit`) Edit
-   form(method="POST" action="/books/" + book._id + "?_method=DELETE")
-      button(type="submit") Delete
-   a(href=`/authors/${book.author._id}`) View author
+   .btn-row
+      a.btn.btn-primary(href=`/books/${book._id}/edit`) Edit
+      form(method="POST" action="/books/" + book._id + "?_method=DELETE")
+         button.btn.btn-danger(type="submit") Delete
+      a.btn.btn-primary(href=`/authors/${book.author._id}`) View author

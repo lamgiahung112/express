@@ -1,7 +1,7 @@
 extends ../layouts/common
 
 block content
-   h2 New author
+   h2.page-header New author
 
    if error
       div= error
@@ -9,5 +9,6 @@ block content
       div
          label(for="name") Name
          input(type="text" name="name" value= author.name placeholder="Name") 
-      a(href="/authors") Cancel
-      button(type="submit") Create
+      .btn-row
+         a.btn.btn-primary(href="/authors") Cancel
+         button.btn.btn-primary(type="submit") Create

@@ -1,7 +1,7 @@
 extends ../layouts/common
 
 block content
-   h1 all authors
+   h1.page-header All authors
    
    form(action="/authors" method="GET")
       div
@@ -12,8 +12,9 @@ block content
    br
    each author in authors
       div= author.name
-      a(href="/authors/"+ author._id) View
-      a(href="/authors/"+ author._id + '/edit') Edit
-      form(method="POST" action="/authors/" + author._id + "?_method=DELETE")
-         button(type="submit") Delete
+      .btn-row
+         a.btn.btn-primary(href="/authors/"+ author._id) View
+         a.btn.btn-primary(href="/authors/"+ author._id + '/edit') Edit
+         form(method="POST" action="/authors/" + author._id + "?_method=DELETE")
+            button.btn.btn-danger(type="submit") Delete
 

@@ -1,7 +1,7 @@
 extends ../layouts/common
 
 block content
-   h2 Edit book
+   h2.page-header Edit book
 
    if error
       div= error
@@ -30,5 +30,6 @@ block content
          textarea(name="description", rows="10")= book.description
       div
          input.filepond(type="file" name="cover")
-      a(href="/books") Cancel
-      button(type="submit") Update
+      .btn-row
+         a.btn.btn-primary(href="/books") Cancel
+         button.btn.btn-primary(type="submit") Update
