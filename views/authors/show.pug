@@ -8,4 +8,5 @@ block content
    if booksByAuthor.length > 0
       h2 Book by Author 
       each book in booksByAuthor
-         img(src= book.coverImagePath height="150" width="100")
+         a(href=`/books/${book._id}`)
+            img(src= book.coverImagePath height="150" width="100")
