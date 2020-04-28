@@ -13,10 +13,11 @@ block content
 
    br
    each author in authors
-      div= author.name
-      .btn-row
-         a.btn.btn-primary(href="/authors/"+ author._id) View
-         a.btn.btn-primary(href="/authors/"+ author._id + '/edit') Edit
-         form(method="POST" action="/authors/" + author._id + "?_method=DELETE")
-            button.btn.btn-danger(type="submit") Delete
+      .author-row
+         .author-name= author.name
+         .btn-row
+            a.btn.btn-primary(href="/authors/"+ author._id) View
+            a.btn.btn-primary(href="/authors/"+ author._id + '/edit') Edit
+            form(method="POST" action="/authors/" + author._id + "?_method=DELETE")
+               button.btn.btn-danger(type="submit") Delete
 
