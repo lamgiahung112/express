@@ -1,0 +1,10 @@
+extends ../layouts/common
+
+block content
+   h1 Edit Author
+   form(action="/authors/"+ author._id + "?_method=PUT" method="POST")
+      div
+         label(for="name") Name
+         input(type="text" name="name" value= author.name placeholder="Name") 
+      a(href="/authors/" + author._id) Cancel
+      button(type="submit") Update

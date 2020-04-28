@@ -7,11 +7,12 @@ debugger
 
 //Requiring middlewares
 const bodyParser = require('body-parser')
-
+const methodOverride = require('method-override')
 
 //Set up middlewares
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false, limit: '10mb'}))
+app.use(methodOverride('_method'))
 
 //Set up mongo
 const mongoose = require('mongoose')

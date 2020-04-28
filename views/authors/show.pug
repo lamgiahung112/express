@@ -1,0 +1,11 @@
+extends ../layouts/common
+
+block content
+   h2= author.name
+   a(href=`/authors/${author._id}/edit`) Edit
+   form(method="POST" action="/authors/" + author._id + "?_method=DELETE")
+      button(type="submit") Delete
+   if booksByAuthor.length > 0
+      h2 Book by Author 
+      each book in booksByAuthor
+         img(src= book.coverImagePath height="150" width="100")
