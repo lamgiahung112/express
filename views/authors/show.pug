@@ -7,7 +7,7 @@ block content
       form(method="POST" action="/authors/" + author._id + "?_method=DELETE")
          button.btn.btn-danger(type="submit") Delete
    if booksByAuthor.length > 0
-      h2 Book by Author 
+      h2.page-header Books by Author
       each book in booksByAuthor
          a(href=`/books/${book._id}`)
             img(src= book.coverImagePath height="150" width="100")

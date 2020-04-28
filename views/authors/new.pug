@@ -6,9 +6,10 @@ block content
    if error
       div= error
    form(action="/authors" method="POST")
-      div
-         label(for="name") Name
-         input(type="text" name="name" value= author.name placeholder="Name") 
-      .btn-row
-         a.btn.btn-primary(href="/authors") Cancel
+      .form-row
+         .form-item
+            label(for="name") Name
+            input(type="text" name="name" value= author.name placeholder="Name") 
+      .btn-row.form-row.form-row-end
+         a.btn.btn-danger(href="/authors") Cancel
          button.btn.btn-primary(type="submit") Create

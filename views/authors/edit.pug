@@ -3,9 +3,10 @@ extends ../layouts/common
 block content
    h1.page-header Edit Author
    form(action="/authors/"+ author._id + "?_method=PUT" method="POST")
-      div
-         label(for="name") Name
-         input(type="text" name="name" value= author.name placeholder="Name") 
-      .btn-row
-         a.btn.btn-primary(href="/authors/" + author._id) Cancel
+      .form-row
+         .form-item
+            label Name
+            input(type="text" name="name" value= author.name placeholder="Name") 
+      .btn-row.form-row.form-row-end
+         a.btn.btn-danger(href="/authors/" + author._id) Cancel
          button.btn.btn-primary(type="submit") Update

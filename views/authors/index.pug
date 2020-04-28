@@ -4,10 +4,12 @@ block content
    h1.page-header All authors
    
    form(action="/authors" method="GET")
-      div
-         label(for="name") Name
-         input(type="text", name="name" value= searchOptions.name || '')
-      button(type="submit") Search
+      .form-row
+         .form-item
+            label(for="name") Name
+            input(type="text", name="name" value= searchOptions.name || '')
+      .form-row.form-row-end
+         button.btn.btn-primary(type="submit") Search
 
    br
    each author in authors

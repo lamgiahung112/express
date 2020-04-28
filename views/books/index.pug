@@ -1,20 +1,22 @@
 extends ../layouts/common
 
 block content
-   h1.page-header all books
+   h1.page-header Search books
    
    form(action="/books" method="GET")
-      div
-         label Title
-         input(type="text", name="title" value= searchOptions.title || '')
-      div
-         label Published after
-         input(type="date", name="publishedAfter" value= searchOptions.publishedAfter || '')
-      div
-         label Published before
-         input(type="date", name="publishedBefore" value= searchOptions.publishedBefore || '')
-      .btn-row
-         utton.btn.btn-primary(type="submit") Search
+      .form-row
+         .form-item
+            label Title
+            input(type="text", name="title" value= searchOptions.title || '')
+      .form-row
+         .form-item
+            label Published after
+            input(type="date", name="publishedAfter" value= searchOptions.publishedAfter || '')
+         .form-item
+            label Published before
+            input(type="date", name="publishedBefore" value= searchOptions.publishedBefore || '')
+      .btn-row.form-row.form-row-end
+         button.btn.btn-primary(type="submit") Search
 
    br
    br

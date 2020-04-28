@@ -2,34 +2,37 @@ extends ../layouts/common
 
 block content
    h2.page-header New book
-
    if error
       div= error
    form(action="/books" method="POST")
-      div
-         label Title
-         input(type="text" name="title" value= book.title)
-      div
-         label Author
-         select(name="author")
-            option(selected disabled) Choose author
-            each author in authors
-               if author._id == book.author
-                  option(selected value= author._id)= author.name
-               else
-                  option(value= author._id)= author.name
-      div
-         label Publish Date
-         input(type="date" name="publishDate" 
+      .form-row
+         .form-item
+            label Title
+            input(type="text" name="title" value= book.title)
+         .form-item
+            label Author
+            select(name="author")
+               option(selected disabled) Choose author
+               each author in authors
+                  if author._id == book.author
+                     option(selected value= author._id)= author.name
+                  else
+                     option(value= author._id)= author.name
+      .form-row
+         .form-item
+            label Publish Date
+            input(type="date" name="publishDate" 
                               value= book.publishDate ? new Date(book.publishDate).toISOString().split('T')[0] : '')
-      div
-         label Page Count
-         input(type="number" name="pageCount" value= book.pageCount min="1")
-      div
-         label Description
-         textarea(name="description", rows="10")= book.description
-      div
-         input.filepond(type="file" name="cover")
-      .btn-row
-         a.btn.btn-primary(href="/books") Cancel
+         .form-item
+            label Page Count
+            input(type="number" name="pageCount" value= book.pageCount min="1")
+      .form-row
+         .form-item.form-item-no-grow
+            label Cover
+            input.filepond(type="file" name="cover")
+         .form-item
+            label Description
+            textarea(name="description")= book.description
+      .btn-row.form-row.form-row-end
+         a.btn.btn-danger(href="/books") Cancel
          button.btn.btn-primary(type="submit") Create
