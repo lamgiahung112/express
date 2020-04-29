@@ -25,6 +25,7 @@ db.once('open', () => console.log('connected to mongodb'))
 const indexRoute = require('./routes/index')
 const authorRoute = require('./routes/authors')
 const bookRoute = require('./routes/books')
+const apiAuthorRoute = require('./api/authors')
 
 //setting view
 app.set('view engine', 'pug')
@@ -35,6 +36,7 @@ app.use(express.static('public'))
 app.use('/', indexRoute)
 app.use('/authors', authorRoute)
 app.use('/books', bookRoute)
+app.use('/api/authors', apiAuthorRoute)
 
 app.listen(process.env.PORT || 9080, () => {
    console.log('listening port' + process.env.PORT)

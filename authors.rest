@@ -1,0 +1,22 @@
+http://localhost:9080/api/authors
+
+###
+
+POST http://localhost:9080/api/authors
+Content-Type: application/json
+
+{
+   "name": ""
+}
+
+###
+
+DELETE http://localhost:9080/api/authors/5ea597caafaf002e744936d7
+
+###
+PATCH  http://localhost:9080/api/authors/5ea6612f3e4e5f23787f47cc
+Content-Type: application/json
+
+{
+   "name": "pro player"
+}
